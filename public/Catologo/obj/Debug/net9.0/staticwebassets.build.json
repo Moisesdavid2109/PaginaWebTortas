@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "CX+dbyusjAiDtWRTZscXKmYvmy/9o2jNbRGwe5JCwg8=",
+  "Source": "Catologo",
+  "BasePath": "_content/Catologo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Catologo\\wwwroot",
+      "Source": "Catologo",
+      "ContentRoot": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\",
+      "BasePath": "_content/Catologo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\instagram-logo.png",
+      "SourceId": "Catologo",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\",
+      "BasePath": "_content/Catologo",
+      "RelativePath": "Imagenes/instagram-logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1h5a18iqdl",
+      "Integrity": "NZsoEvujPRIxdQNw90vp/FzQYeY7TyKEL9XgAL7zFPg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\instagram-logo.png"
+    },
+    {
+      "Identity": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\R.png",
+      "SourceId": "Catologo",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\",
+      "BasePath": "_content/Catologo",
+      "RelativePath": "Imagenes/R#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fqbk3smywe",
+      "Integrity": "mdSyw5sCwmHhye8CPZ2SkPdUii9x4fFgsT5Rs6jRB5I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\R.png"
+    },
+    {
+      "Identity": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\whatsapp-logo.png",
+      "SourceId": "Catologo",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\",
+      "BasePath": "_content/Catologo",
+      "RelativePath": "Imagenes/whatsapp-logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kvs8yq0epc",
+      "Integrity": "MM5iL9OvrP5sAsdngUixLiDKPrbwolRK/xy0Atz5Ca8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\whatsapp-logo.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Imagenes/instagram-logo.1h5a18iqdl.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\instagram-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NZsoEvujPRIxdQNw90vp/FzQYeY7TyKEL9XgAL7zFPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 19:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1h5a18iqdl"
+        },
+        {
+          "Name": "label",
+          "Value": "Imagenes/instagram-logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NZsoEvujPRIxdQNw90vp/FzQYeY7TyKEL9XgAL7zFPg="
+        }
+      ]
+    },
+    {
+      "Route": "Imagenes/instagram-logo.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\instagram-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31670"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NZsoEvujPRIxdQNw90vp/FzQYeY7TyKEL9XgAL7zFPg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 19:47:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NZsoEvujPRIxdQNw90vp/FzQYeY7TyKEL9XgAL7zFPg="
+        }
+      ]
+    },
+    {
+      "Route": "Imagenes/R.fqbk3smywe.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\R.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "634188"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mdSyw5sCwmHhye8CPZ2SkPdUii9x4fFgsT5Rs6jRB5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Dec 2024 21:43:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fqbk3smywe"
+        },
+        {
+          "Name": "label",
+          "Value": "Imagenes/R.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mdSyw5sCwmHhye8CPZ2SkPdUii9x4fFgsT5Rs6jRB5I="
+        }
+      ]
+    },
+    {
+      "Route": "Imagenes/R.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\R.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "634188"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mdSyw5sCwmHhye8CPZ2SkPdUii9x4fFgsT5Rs6jRB5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 20 Dec 2024 21:43:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mdSyw5sCwmHhye8CPZ2SkPdUii9x4fFgsT5Rs6jRB5I="
+        }
+      ]
+    },
+    {
+      "Route": "Imagenes/whatsapp-logo.kvs8yq0epc.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\whatsapp-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MM5iL9OvrP5sAsdngUixLiDKPrbwolRK/xy0Atz5Ca8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 19:50:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kvs8yq0epc"
+        },
+        {
+          "Name": "label",
+          "Value": "Imagenes/whatsapp-logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MM5iL9OvrP5sAsdngUixLiDKPrbwolRK/xy0Atz5Ca8="
+        }
+      ]
+    },
+    {
+      "Route": "Imagenes/whatsapp-logo.png",
+      "AssetFile": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\whatsapp-logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "200510"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MM5iL9OvrP5sAsdngUixLiDKPrbwolRK/xy0Atz5Ca8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 23 Dec 2024 19:50:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MM5iL9OvrP5sAsdngUixLiDKPrbwolRK/xy0Atz5Ca8="
+        }
+      ]
+    }
+  ]
+}

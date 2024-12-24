@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\R.png",
+      "PackagePath": "staticwebassets\\Imagenes\\R.png"
+    },
+    {
+      "Id": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\instagram-logo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\instagram-logo.png"
+    },
+    {
+      "Id": "D:\\Documentos\\C# Programas\\Catologo\\Catologo\\wwwroot\\Imagenes\\whatsapp-logo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\whatsapp-logo.png"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Catologo.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.Catologo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.Catologo.props",
+      "PackagePath": "build\\Catologo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.Catologo.props",
+      "PackagePath": "buildMultiTargeting\\Catologo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.Catologo.props",
+      "PackagePath": "buildTransitive\\Catologo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

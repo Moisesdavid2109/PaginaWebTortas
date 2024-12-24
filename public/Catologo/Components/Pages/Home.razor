@@ -1,0 +1,349 @@
+﻿@page "/"
+@using Funciones
+@using System.Globalization
+@using System.Text
+@using Tarjetas
+@rendermode InteractiveServer
+
+<PageTitle>Cimientos de Sabor</PageTitle>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+        overflow-y: auto; /* Asegura que solo haya una barra de desplazamiento vertical */
+        background: rgba(0, 0, 0, 0.5) url('https://acortar.link/LZT7wB') no-repeat center center fixed; /* Fondo semi-transparente con imagen */
+        background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    }
+    .full-width-container {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        background-color: #f3a2cf;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 50px;
+        min-height: 80px;
+    }
+    .title {
+        color: rgb(0, 0, 0);
+        font-style: italic;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .menu-icon {
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .nav-button {
+        background-color: #f3a2cf;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+        font-style: bold;
+    }
+    .nav-button:hover {
+        background-color: #333333;
+        color: #ffffff;
+    }
+    .nav-buttons .separator {
+        border-left: 1px solid #ffffff;
+        height: 30px;
+        margin: 0 10px;
+    }
+    .section-bar {
+        width: 100%;
+        background-color: #f1f1f1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+        margin-top: -10px; /* Ajusta este valor según sea necesario */
+        overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    }
+    .section-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .section-button {
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0; /* Sin bordes redondeados */
+        transition: background-color 0.3s, color 0.3s;
+        border-left: 1px solid #ccc; /* Línea vertical entre botones */
+    }
+    .section-button:first-child {
+        border-left: none; /* Sin línea en el primer botón */
+    }
+    .section-button:hover {
+        background-color: #dddddd;
+        color: #000000;
+    }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        margin-right: 50px; /* Separación del borde derecho */
+    }
+    .search-input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+    }
+    .catalog-images {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left; /* Centra las tarjetas en la fila */
+        overflow: hidden; /* Evita el desbordamiento horizontal */
+    }
+    .catalog-item {
+        flex: 0 1 250px; /* Ancho fijo para las tarjetas */
+        margin: 20px; /* Separación de al menos 2 cm */
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid #ccc; /* Borde alrededor del recuadro */
+        padding: 10px; /* Espacio interno del recuadro */
+        background-color: #f9f9f9; /* Color de fondo del recuadro */
+        border-radius: 10px; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+        transition: transform 0.2s, box-shadow 0.2s; /* Transición para el efecto hover */
+        height: 300px; /* Altura fija para todas las tarjetas */
+        position: relative; /* Necesario para el z-index */
+    }
+    .catalog-item:hover {
+        transform: translateY(-5px); /* Efecto de elevación */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    }
+    .catalog-item img {
+        width: 100%;
+        height: 180px; /* Altura fija para las imágenes */
+        object-fit: contain; /* Asegura que la imagen se ajuste dentro del área sin recortarse */
+        border-radius: 20px; /* Bordes redondeados para la imagen */
+        transition: transform 0.2s; /* Transición para el efecto de agrandamiento */
+        cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+    }
+    .catalog-item img.enlarged {
+        transform: scale(1.5); /* Agranda la imagen al 150% */
+        z-index: 10; /* Asegura que la imagen agrandada esté por encima de otras */
+        position: absolute; /* Necesario para el z-index */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .catalog-item p {
+        margin: 5px 0 0 0;
+        color: #000;
+    }
+    .catalog-item.empty {
+        visibility: hidden; /* Oculta los elementos vacíos */
+    }
+    .subtitulo {
+        text-align: center;
+        margin-top: 20px;
+        font-family:'Times New Roman', Times, serif ;
+    }
+    .footer {
+        background-color: #f3a2cf;
+        color: #000;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #ccc;
+    }
+    .footer .social-icons {
+        margin: 10px 0;
+    }
+    .footer .social-icons button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    .footer .social-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 0 10px;
+    }
+    .footer .social-icons span {
+        margin-left: 5px;
+        font-size: 16px;
+        vertical-align: middle;
+    }
+</style>
+
+<div class="full-width-container">
+    <div class="title">
+        <h2>Cimientos de Sabor</h2>
+    </div>
+    <div class="nav-buttons">
+        <button class="nav-button" @onclick="() => FilterByCategory(string.Empty)">Inicio</button>
+    </div>
+</div>
+<hr>
+
+<div class="section-bar">
+    <div class="section-buttons">
+        <button class="section-button" @onclick="() => FilterByCategory(string.Empty)">Todas</button>
+        <button class="section-button" @onclick='() => FilterByCategory("Minimalista")'>Minimalistas</button>
+        <button class="section-button" @onclick='() => FilterByCategory("Tematicas")'>Temáticas</button>
+        <button class="section-button" @onclick='() => FilterByCategory("De lujo")'>De lujo</button>
+        <button class="section-button" @onclick='() => FilterByCategory("Gelatinas normales")'>Gelatinas normales</button>
+        <button class="section-button" @onclick='() => FilterByCategory("Gelatinas 3D")'>Gelatinas 3D normales</button>
+    </div>
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Buscar..." @oninput="SearchTortas" @bind="searchQuery">
+    </div>
+</div>
+<hr>
+<div class="subtitulo">
+    <h2>Elije el diseño que desees</h2>
+</div>
+
+<div class="catalog-images">
+    @foreach (var torta in filteredTortas)
+    {
+        <div class="catalog-item @(enlargedImageUrl == torta.getNombre() ? "enlarged" : "")">
+            <img src="@torta.getUrlImage()" alt="Torta de @torta.getNombre()" @onclick="() => RedirectToSocialMedia(torta.getNombre())" />
+            <p>@torta.getNombre()</p>
+        </div>
+    }
+    <!-- Añadir elementos vacíos para mantener el tamaño del contenedor -->
+    @for (int i = filteredTortas.Count; i < 4; i++)
+    {
+        <div class="catalog-item empty"></div>
+    }
+</div>
+<hr>
+
+<div class="footer">
+    <h4>Comunicate con conotros via Instagram o WhatsApp  </h4>
+    <div class="social-icons">
+        <button @onclick='() => OpenInNewTab("https://www.instagram.com")'>
+            <img src="Imagenes/instagram-logo.png" alt="Instagram"/>
+        </button>
+        <button @onclick='() => OpenInNewTab("https://www.whatsapp.com")'>
+            <img src="Imagenes/whatsapp-logo.png" alt="WhatsApp" />
+        </button>
+    </div>
+    <p>San Rafael de Cordero - 12 de Octubre - Diagonal a la 24 de Mayo</p>
+    <p>¡Te esperamos, vuelve pronto!</p>
+    <p>Gracias por visitarnos. ¡Que tengas un día maravilloso!</p>
+</div>
+
+@code
+{
+    [Inject]
+    private IJSRuntime? jsRuntime { get; set; }
+
+    private List<TarjetasTortas> tortas = new List<TarjetasTortas>();
+    private List<TarjetasTortas> filteredTortas = new List<TarjetasTortas>();
+    private FuncionesTarjetas funciones = new FuncionesTarjetas();
+    private string searchQuery = string.Empty;
+    private string selectedCategory = string.Empty;
+    private string enlargedImageUrl = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        tortas = funciones.agregarDatos();
+        filteredTortas = tortas; // Inicialmente muestra todas las tarjetas
+    }
+
+    private void FilterByCategory(string category)
+    {
+        selectedCategory = category;
+        searchQuery = string.Empty; // Borra el contenido de la barra de búsqueda
+        ApplyFilters();
+    }
+
+    private void SearchTortas(ChangeEventArgs e)
+    {
+        searchQuery = e.Value?.ToString() ?? string.Empty;
+        ApplyFilters();
+    }
+
+    private void ApplyFilters()
+    {
+        var filteredByCategory = string.IsNullOrEmpty(selectedCategory) ? tortas : tortas.Where(t => t.getCategoria() == selectedCategory).ToList();
+        filteredTortas = string.IsNullOrEmpty(searchQuery) ? filteredByCategory : filteredByCategory.Where(t => RemoveDiacritics(t.getNombre()).Contains(RemoveDiacritics(searchQuery), StringComparison.OrdinalIgnoreCase)).ToList();
+        StateHasChanged(); // Asegúrate de que la interfaz de usuario se actualice
+    }
+
+    private void ToggleImageSize(string nombre)
+    {
+        if (enlargedImageUrl == nombre)
+        {
+            enlargedImageUrl = string.Empty; // Reduce la imagen si ya está agrandada
+        }
+        else
+        {
+            enlargedImageUrl = nombre; // Agranda la imagen
+        }
+    }
+
+    private void RedirectToSocialMedia(string nombre)
+    {
+        if (nombre.Contains("Instagram", StringComparison.OrdinalIgnoreCase))
+        {
+            OpenInNewTab("https://www.instagram.com");
+        }
+        else if (nombre.Contains("WhatsApp", StringComparison.OrdinalIgnoreCase))
+        {
+            OpenInNewTab("https://www.whatsapp.com");
+        }
+    }
+
+    private void OpenInNewTab(string url)
+    {
+        jsRuntime?.InvokeVoidAsync("open", url, "_blank");
+    }
+
+    private string RemoveDiacritics(string text)
+    {
+        if (string.IsNullOrEmpty(text))
+            return text;
+
+        var normalizedString = text.Normalize(NormalizationForm.FormD);
+        var stringBuilder = new StringBuilder();
+
+        foreach (var c in normalizedString)
+        {
+            var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+            if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+            {
+                stringBuilder.Append(c);
+            }
+        }
+
+        return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+    }
+}
